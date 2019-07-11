@@ -21,7 +21,7 @@ test('getPokemonById: Gets a pokemon object by their id', () => {
     expect(pokemon.height).toBe('0.41 m')
 })
 
-test.only('getRarePokemons: Transforms an array of pokemon into an array of "rare" (spawn_chance is less than 0.1) pokemon', () => {
+test('getRarePokemons: Transforms an array of pokemon into an array of "rare" (spawn_chance is less than 0.1) pokemon', () => {
     const rarePokemon = getRarePokemons(pokemons)
     expect(rarePokemon.length).toBe(81)
     expect(rarePokemon.every(pokemon => pokemon.spawn_chance < 0.10)).toBe(true)
