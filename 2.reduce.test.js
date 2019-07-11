@@ -22,7 +22,7 @@ test('calculateTotalEggDistance: calculates how for you have to walk to hatch on
     expect(totalEggDistance).toBe(408)
 })
 
-test('getHeaviestPokemon: returns the heaviest pokemon from an array of pokemons', () => {
+test.only('getHeaviestPokemon: returns the heaviest pokemon from an array of pokemons', () => {
     const heaviestPokemon = getHeaviestPokemon(pokemons)
     expect(heaviestPokemon.id).toBe(143)
 })

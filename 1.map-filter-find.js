@@ -10,8 +10,8 @@ const getRarePokemons = (pokemons) => {
     
 }
 
-const getMidSizedPokemon = (pokemons, weight) => {
-    return pokemons.find(pokemon => pokemon.weight === weight)
+const getMidSizedPokemon = (pokemons) => {
+    return pokemons.find(pokemon => pokemon.weight === '38.0 kg')
 
 }
 
@@ -20,7 +20,7 @@ const getAdultPokemons = (pokemons) =>{
 }
 
 const getPokemonImages= (pokemons)=> {
-
+    return pokemons.map(pokemon => pokemon.img)
 }
 module.exports = {
     getPokeNames,
