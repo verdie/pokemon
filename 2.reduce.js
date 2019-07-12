@@ -42,15 +42,20 @@ const categorizePokemonsByRarity =(pokemons) =>{
         legendary : []
     }
 
-    const pokemonsByRarityClasses = pokemons.reduce(function(pokemon,current){
+    const pokemonsByRarityClasses = pokemons.reduce(function(current,pokemon){
         if (pokemon.spawn_chance > 0.1){
-            return current.common.push(pokemon)
+            current.common.push(pokemon)
+            return current
         }
-        else if (pokemon.spawn_chance < 0.1, pokemon.spawn_chance > 0.01){
-            return current.rare.push(pokemon)
+        else if (pokemon.spawn_chance <= 0.1 && pokemon.spawn_chance >= 0.01){
+             current.rare.push(pokemon)
+             return current
         }
-        else return current
-    }, pokemonsByRarity )
+        else if(pokemon.spawn_chance < 0.01){
+            current.legendary.push(pokemon)
+            return current
+        } 
+    }, pokemonsByRarity)
 
     
 return pokemonsByRarityClasses
